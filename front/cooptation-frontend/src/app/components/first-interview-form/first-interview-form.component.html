@@ -1,0 +1,191 @@
+
+  <div class="col-sm-6 p-md-0" >
+    <div class="welcome"  style="margin-left: 50px ; padding-top:20px " >
+        <h4 style="color:#006dbf">COMPTE RENDU DE L’ENTRETIEN</h4>
+    </div>
+  </div>
+<div class="row" id="form_container">
+    <div class="col-lg-12">
+            <div class="card-body">
+                <div class="form-validation">
+                    <form class="form-valide" action="#" method="post" [formGroup]="angForm" novalidate>
+                        <div class="row">
+                            <div class="col-xl-5">
+                                <div class="col-xl-12">
+                                    <div class="form-group row">
+                                        <label class="col-lg-6 col-form-label" >Date de l'entretien
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="date" class="form-control" id="interview_date"  formControlName="interview_date" > 
+                                               <div *ngIf="angForm.controls['interview_date'].invalid && (angForm.controls['interview_date'].dirty || angForm.controls['interview_date'].touched || saveClicked)" class="text-danger fs-13 mt-1">
+                                                 <div *ngIf="angForm.controls['interview_date'].errors.required">
+                                                    La date est requise.
+                                                  </div>
+                                                 <div *ngIf="angForm.controls['interview_date'].errors.invalidDate">
+                                                    Entrer une date valide
+                                                  </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <div class="form-group row">
+                                        <label class="col-lg-6 col-form-label" for="interview_type" >Type d'entretien
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <select class="form-control " id="interview_type" formControlName="interview_type">
+                                                <option value="rdv_cooptation" selected>RDV cooptation</option>
+                                                <option value="others">Autres</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="col-xl-7">
+                                <div class="col-xl-12">
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label" for="cv" >Rémunération actuelle
+                                        </label> 
+                                        <div class="col-lg-4">
+                                            <input type="text" class="form-control" id="actual_salary" placeholder="Fixe" formControlName="currentsalary"> 
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <input type="text" class="form-control" id="actual_salary" placeholder="Variable"> 
+                                        </div>         
+                                    </div> 
+                                </div>
+                                <div class="col-xl-12">
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label" for="cv" >Rémunération souhaitée
+                                        </label> 
+                                        <div class="col-lg-4">
+                                            <input type="text" class="form-control" id="actual_salary" placeholder="Fixe" formControlName="desiredsalary"> 
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <input type="text" class="form-control" id="actual_salary" placeholder="Variable"> 
+                                        </div>         
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-xl-12">
+                                <div class="col-xl-12">
+                                    <div class="form-group row">
+                                        <label for="exampleFormControlTextarea1" class="col-lg-2 col-form-label" >L'expérience</label>
+                                        <div class="col-lg-9" style="margin-left: 50px">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" formControlName="experience"></textarea>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="col-xl-12">
+                                    <div class="form-group row" >
+                                        <label for="exampleFormControlTextarea1" class="col-lg-2 col-form-label"  >La personnalité</label>
+                                        <div class="col-lg-9" style="margin-left: 50px">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="character" rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="col-xl-12">
+                                    <div class="form-group row">
+                                        <label for="exampleFormControlTextarea1" class="col-lg-2 col-form-label" >Les compétences</label>
+                                        <div class="col-lg-9" style="margin-left: 50px">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" formControlName="skills"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="col-xl-12">
+                                    <div class="form-group row">
+                                        <label for="exampleFormControlTextarea1" class="col-lg-2 col-form-label" >Commentaires
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        
+                                        <div class="col-lg-9" style="margin-left: 50px">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" formControlName="comments"></textarea>
+                                            <div *ngIf="angForm.controls['comments'].invalid && (angForm.controls['comments'].dirty || angForm.controls['comments'].touched || saveClicked)" class="text-danger fs-13 mt-1">
+                                    
+                                                <div *ngIf="angForm.controls['comments'].errors.required">
+                                                  Commentaire obligatoire.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="col-sm-6 p-md-0" >
+                <div class="welcome"  style="margin-left: 50px ; padding-top:20px " >
+                    <h4 style="color:#006dbf">PRÉSENTATION DE L'ENTREPRISE DU COOPTÉ</h4>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="card-body">
+                    <div class="form-validation">
+                        <form class="form-valide" action="#" method="post" [formGroup]="angForm" novalidate>
+                            <div class="row">
+                                <div class="col-xl-5">
+                                    <div class="col-xl-12">
+                                        <div class="form-group row">
+                                            <label class="col-lg-6 col-form-label" >Les domaines d'activité</label>
+                                            <div class="col-lg-6">
+                                                    <mat-radio-group aria-label="Select an option" formControlName="fildesofactivity" >
+                                                        <mat-radio-button class="mr-3" value="1" (change)="onFieldActivitiesChange($event)" >Oui</mat-radio-button>
+                                                        <mat-radio-button value="0" (change)="onFieldActivitiesChange($event)" >Non</mat-radio-button>
+                                                    </mat-radio-group>
+                                            </div>
+                                        </div> 
+                                    </div>
+                               
+                                    <div class="col-xl-12">
+                                        <div class="form-group row">
+                                            <label class="col-lg-6 col-form-label" >Les chiffres Clefs</label>
+                                            <div class="col-lg-6">
+                                                    <mat-radio-group aria-label="Select an option" formControlName="keyfiguers">
+                                                        <mat-radio-button class="mr-3 " value="1" (change)="onKeyValuesChange($event)" >Oui</mat-radio-button>
+                                                        <mat-radio-button  value="0" (change)="onKeyValuesChange($event)">Non</mat-radio-button>
+                                                    </mat-radio-group>
+                                             </div>
+                                        </div> 
+                                    </div>     
+                                    <div class="col-xl-12">
+                                        <div class="form-group row">
+                                            <label class="col-lg-6 col-form-label" >Les valeurs de Talan</label>
+                                            <div class="col-lg-6">
+                                                    <mat-radio-group aria-label="Select an option" formControlName="values">
+                                                        <mat-radio-button class="mr-3" value="1" (change)="onValuesChange($event)"  >Oui</mat-radio-button>
+                                                        <mat-radio-button value="0" (change)="onValuesChange($event)" >Non</mat-radio-button>
+                                                    </mat-radio-group>
+                                             </div>
+                                        </div> 
+                                    </div>
+                                </div>    
+                                    <div class="col-xl-7">
+                                        <div class="col-xl-12">
+                                            <div class="form-group row">
+                                                <label for="exampleFormControlTextarea1" class="col-lg-2 col-form-label" >Commentaires</label> 
+                                                <div class="col-lg-9" >
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" formControlName="secondcomments"></textarea>
+                                                </div>    
+                                             </div>
+                                    </div>
+                                </div>   
+                            </div>       
+                        </form>                        
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+
+
+
+

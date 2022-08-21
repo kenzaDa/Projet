@@ -1,0 +1,26 @@
+.iconCV {
+    padding-left: 25px;
+    background: url("https://th.bing.com/th/id/OIP.1c2tkE8wyvhweuGq_Xy4vwHaHa?pid=ImgDet&rs=1") no-repeat left;
+    background-size: 25px;
+    border-color: white;
+  
+  }
+
+.bi{
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  height: 1000px;
+  margin: auto;
+  position:relative;
+  color:#006dbf;
+  background-color: white;
+
+}
+.form-group{
+  height: 100px;
+
+}
